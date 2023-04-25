@@ -13,13 +13,13 @@ function solveEquation(a, b, c) {
 }
 
 function calculateTotalMortgage(_percent, contribution, amount, countMonths) {
-  if(isNaN(_percent) || _percent < 0) {
+  if (isNaN(_percent) || _percent < 0) {
     return false;
-  } else if(isNaN(contribution) || contribution < 0) {
+  } else if (isNaN(contribution) || contribution < 0) {
     return false;
-  } else if(isNaN(amount) || amount < 0) {
+  } else if (isNaN(amount) || amount < 0) {
     return false;
-  } else if(isNaN(countMonths) || countMonths < 0) {
+  } else if (isNaN(countMonths) || countMonths < 0) {
     return false;
   }
   let monthlyRate = _percent / 100 / 12;
