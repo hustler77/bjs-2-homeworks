@@ -54,6 +54,8 @@ class DetectiveBook extends Book {
     this.type = "detective";
   }
 }
+
+//task 2
 class Library {
   constructor(name) {
     this.name = name;
@@ -72,6 +74,21 @@ class Library {
     let findBook = this.books.findIndex((element) => element.name === bookName);
     return findBook != -1 ? this.books.splice(findBook, 1)[0] : null;
   }
-  
-  
+}
+
+// task 3
+class Student {
+  constructor(name) {
+    this.name = name;
+    this.marks = {};
+  }
+  addMark(mark, subject) {
+    if (mark < 2 || mark > 5) {
+      return;
+    }
+    if(!this.marks.hasOwnProperty(subject)) {
+      this.marks[subject] = [];
+    }
+    this.marks[subject].push(mark);
+  }
 }
