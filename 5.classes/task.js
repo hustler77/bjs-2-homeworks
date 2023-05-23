@@ -82,13 +82,36 @@ class Student {
     this.name = name;
     this.marks = {};
   }
+
   addMark(mark, subject) {
     if (mark < 2 || mark > 5) {
       return;
     }
-    if(!this.marks.hasOwnProperty(subject)) {
+    if (!this.marks.hasOwnProperty(subject)) {
       this.marks[subject] = [];
     }
     this.marks[subject].push(mark);
+  }
+
+  getAverageBySubject(subject) {
+    if (!this.marks.hasOwnProperty(subject)) {
+      return 0;
+    }
+    return this.marks[subject].reduce(
+      (acc, item) => (acc += item / this.marks[subject].length),
+      0
+    );
+  }
+
+  getAverage() {
+    let subjects = Object.keys(this.marks);
+    if (subjects.length === 0) {
+      return 0;
+    }
+    let sumOfMarks = 0;
+    for (let i = 0; i < subjects.length; i++) {
+      sumOfMarks += this.getAverageBySubject(subjects[i]);
+    }
+    return sumOfMarks / subjects.length;
   }
 }
