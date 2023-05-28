@@ -35,7 +35,7 @@ class Triangle {
     return this.firstSide + this.secondSide + this.thirdSide;
   }
   get area() {
-    const p = (this.firstSide + this.secondSide + this.thirdSide) / 2;
+    const p = this.perimeter / 2;
     return +Math.sqrt(
       p * ((p - this.firstSide) * (p - this.secondSide) * (p - this.thirdSide))
     ).toFixed(3);
