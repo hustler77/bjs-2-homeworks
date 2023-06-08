@@ -22,7 +22,7 @@ class AlarmClock {
   }
 
   getCurrentFormattedTime() {
-    var currentTime = new Date();
+    let currentTime = new Date();
     return currentTime.toLocaleTimeString().slice(0, -3);
   }
 
